@@ -35,3 +35,11 @@ app.post('/api/cars',(req,res) => {
     res.send('Car submiteed Succesfully');
 
 });
+
+const mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost:27017/myDatabase',{
+    useNewUrlParser: true,
+    useUnifiedTopology : true
+})
+.then(() => {console.log('Connection Succesful')})
+.catch((error) => {console.log(`Received an error : ${error}`)});
